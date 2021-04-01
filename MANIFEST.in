@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+include taylorswift/answertext.txt
+include taylorswift/Grades.csv

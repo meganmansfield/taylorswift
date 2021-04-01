@@ -2,6 +2,8 @@
 import numpy as np
 import csv
 
+__all__ = ['taylorswift']
+
 def taylorswift():
 	data=[]
 
