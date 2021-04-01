@@ -1,11 +1,14 @@
 #suggest a song to match your relationship
 import numpy as np
-import csv
+import csv, os
+from . import PACKAGEDIR
+
+__all__ = ['taylorswift']
 
 def taylorswift():
 	data=[]
 
-	with open('Grades.csv','rt') as f:
+	with open(os.path.join(PACKAGEDIR,'Grades.csv'),'rt') as f:
 		data=[row for row in csv.reader(f,delimiter=',')]
 
 	numsongs=149
@@ -40,7 +43,7 @@ def taylorswift():
 		together[i]=float(set[11])
 		i+=1
 
-	texts=np.loadtxt('answertext.txt',delimiter='#',dtype='str')
+	texts=np.loadtxt(os.path.join(PACKAGEDIR, 'answertext.txt'),delimiter='#',dtype='str')
 
 	######################################################################################
 	print('''
