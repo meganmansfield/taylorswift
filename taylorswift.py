@@ -45,7 +45,7 @@ def taylorswift():
 	######################################################################################
 	print('''
 	    For these first four questions, if you are in a relationship, answer them with respect to your current relationship. If you are not currently in a relationship, answer them by considering either your most recent past relationship, or a potential relationship on the horizon, whichever you prefer.
-	    
+
 	    Which of these best describes your relationship?
 	    1 - Our relationship ended because of cataclysmic past offenses. OR Our relationship has some serious problems.
 	    2 - My feelings were a bit hurt when our relationship ended. OR Our relationship is going ok but has some problems.
@@ -115,7 +115,7 @@ def taylorswift():
 
 	print('''
 	    For these next two questions, think about how you feel about your life overall.
-	    
+
 	Which of these best describes how you feel about yourself?
 	1 - I have a lot of problems and they're all my fault.
 	2 - I have a lot of problems, but I don't think they're all my fault.
@@ -138,9 +138,9 @@ def taylorswift():
 	2 - You don't like how your life is going and you just want to make a deal to get your old life back.
 	3 - You know something's wrong with your life but you want to ignore it.
 	4 - You've accepted the bad things that have happened to you and are ready to move on from them.
-	5 - You're feeling pretty neutral and you're waiting for life to make you happy.
-	6 - You're actively working to make yourself happy.
-	7 - You're actively working to make yourself happy and trying to make sure that everyone else is happy too.
+	5 - You're feeling pretty neutral and you're waiting for life to make you happy 😄.
+	6 - You're actively working to make yourself happy 😄.
+	7 - You're actively working to make yourself happy 😄 and trying to make sure that everyone else is happy 😄 too.
 	''')
 	thap3=float(input('Please enter a number from 1 to 7: '))
 	if thap3<1:
@@ -174,12 +174,11 @@ def taylorswift():
 	okintlist=[int(i) for i in oklist]
 	finalok=okintlist[0:5]
 
-	print('Here are the top five songs that match your mood:')
+	print('Here are the top five songs that match your mood 😻:')
 	for x,item in enumerate(finalok):
 	    n=x+1
 	    print(str(n)+': '+title[item])
 	    print(texts[item])
 
-
-
-
+if __name__ == '__main__':
+	taylorswift()
