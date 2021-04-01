@@ -45,7 +45,7 @@ def taylorswift():
 	######################################################################################
 	print('''
 	    For these first four questions, if you are in a relationship, answer them with respect to your current relationship. If you are not currently in a relationship, answer them by considering either your most recent past relationship, or a potential relationship on the horizon, whichever you prefer.
-	    
+
 	    Which of these best describes your relationship?
 	    1 - Our relationship ended because of cataclysmic past offenses. OR Our relationship has some serious problems.
 	    2 - My feelings were a bit hurt when our relationship ended. OR Our relationship is going ok but has some problems.
@@ -115,7 +115,7 @@ def taylorswift():
 
 	print('''
 	    For these next two questions, think about how you feel about your life overall.
-	    
+
 	Which of these best describes how you feel about yourself?
 	1 - I have a lot of problems and they're all my fault.
 	2 - I have a lot of problems, but I don't think they're all my fault.
@@ -180,6 +180,5 @@ def taylorswift():
 	    print(str(n)+': '+title[item])
 	    print(texts[item])
 
-
-
-
+if __name__ == '__main__':
+	taylorswift()

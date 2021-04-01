@@ -10,11 +10,9 @@ Python 2 or 3, and the numpy package (which comes with most standard python down
 
 After downloading, type the following into the command line:
 
-python
-
-import taylorswift as ts
-
-ts.taylorswift()
+```
+python taylorswift.py
+```
 
 And that's it! Answer the questions and you'll see a list of the top five songs which match your current mood and relationship status.
 
