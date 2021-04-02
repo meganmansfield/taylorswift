@@ -8,6 +8,10 @@ Python 2 or 3, and the numpy package (which comes with most standard python down
 
 # Instructions:
 
+Download from GitHub, or use pip:
+
+	pip install taylorswift
+
 After downloading, type the following into the command line:
 
       python
