@@ -58,17 +58,17 @@ def taylorswift():
 
 	######################################################################################
 	print('''
-		For these first four questions, if you are in a relationship, answer them with respect to your current relationship. If you are not currently in a relationship, answer them by considering either your most recent past relationship, or a potential relationship on the horizon, whichever you prefer.
-		
-		Which of these best describes your relationship?
-		1 - Our relationship ended because of cataclysmic past offenses. OR Our relationship has some serious problems.
-		2 - My feelings were a bit hurt when our relationship ended. OR Our relationship is going ok but has some problems.
-		3 - Our relationship ended, but not in a horribly bad way. It just ended. OR I feel pretty mediocre about the quality of our relationship.
-		4 - I wish I was in a relationship, but I don't think it will happen right now. OR I'm happy without a relationship right now.
-		5 - My relationship is pretty casual at the moment, not official or anything. OR I look back fondly on my past relationship, without feeling hurt or angry.
-		6 - My relationship is going well and we're thinking about long-term commitment.
-		7 - I'm getting married and/or comitting to this relationship for the rest of my life.
-		''')
+	    For these first four questions, if you are in a relationship, answer them with respect to your current relationship. If you are not currently in a relationship, answer them by considering either your most recent past relationship, or a potential relationship on the horizon, whichever you prefer.
+	    
+	    Which of these best describes your relationship?
+	    1 - Our relationship ended because of cataclysmic past offenses. OR Our relationship has some serious problems.
+	    2 - My feelings were a bit hurt when our relationship ended. OR Our relationship is going ok but has some problems.
+	    3 - Our relationship ended, but not in a horribly bad way. It just ended. OR I feel pretty mediocre about the quality of our relationship.
+	    4 - I wish I was in a relationship, but I don't think it will happen right now. OR I'm happy without a relationship right now.
+	    5 - My relationship is pretty casual at the moment, not official or anything. OR I look back fondly on my past relationship, without feeling hurt or angry.
+	    6 - My relationship is going well and we're thinking about long-term commitment.
+	    7 - I'm getting married and/or comitting to this relationship for the rest of my life.
+	    ''')
 	trel1=float(input('Please enter a number from 1 to 7: '))
 	if trel1<1:
 		assert trel1>1, "You must enter an integer between 1 and 7"
@@ -128,8 +128,8 @@ def taylorswift():
 	rel4=int(trel4)-4
 
 	print('''
-		For these next two questions, think about how you feel about your life overall.
-		
+	    For these next two questions, think about how you feel about your life overall.
+	    
 	Which of these best describes how you feel about yourself?
 	1 - I have a lot of problems and they're all my fault.
 	2 - I have a lot of problems, but I don't think they're all my fault.
@@ -177,22 +177,22 @@ def taylorswift():
 	oklist=np.zeros(20)
 	index=0
 	for n in range(0,40):
-		if any(np.abs(neterr)==n):
-			ok=np.where(np.abs(neterr)==n)[0]
-			for x in ok:
-				oklist[index]=x
-				index+=1
-			if index>4:
-				break
+	    if any(np.abs(neterr)==n):
+	        ok=np.where(np.abs(neterr)==n)[0]
+	        for x in ok:
+	            oklist[index]=x
+	            index+=1
+	        if index>4:
+	            break
 
 	okintlist=[int(i) for i in oklist]
 	finalok=okintlist[0:5]
 
 	print('Here are the top five songs that match your mood:')
 	for x,item in enumerate(finalok):
-		n=x+1
-		print(str(n)+': "'+title[item] + '", ' + error_description(neterr[item]))
-		print(texts[item])
+	    n=x+1
+	    print(str(n)+': "'+title[item] + '", ' + error_description(neterr[item]))
+	    print(texts[item])
 
 
 
