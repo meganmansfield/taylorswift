@@ -5,6 +5,17 @@ from . import PACKAGEDIR
 
 __all__ = ['taylorswift']
 
+def error_description(squared_error):
+	if squared_error < 1:
+		return 'perfect match'
+	elif 1 <= squared_error < 5:
+		return 'good match'
+	elif 5 <= squared_error < 12:
+		return 'decent match'
+	else:
+		return 'not a good match'
+
+
 def taylorswift():
 	data=[]
 
@@ -180,7 +191,7 @@ def taylorswift():
 	print('Here are the top five songs that match your mood:')
 	for x,item in enumerate(finalok):
 	    n=x+1
-	    print(str(n)+': '+title[item])
+	    print(str(n)+': "'+title[item] + '", ' + error_description(neterr[item]))
 	    print(texts[item])
 
 
