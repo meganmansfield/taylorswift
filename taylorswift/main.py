@@ -11,7 +11,7 @@ def taylorswift():
 	with open(os.path.join(PACKAGEDIR,'Grades.csv'),'rt') as f:
 		data=[row for row in csv.reader(f,delimiter=',')]
 
-	numsongs=149
+	numsongs=180
 
 	title=[0]*numsongs
 	album=[0]*numsongs
