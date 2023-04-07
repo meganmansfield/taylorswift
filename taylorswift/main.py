@@ -1,14 +1,16 @@
 #suggest a song to match your relationship
 import numpy as np
-import csv, os
-from . import PACKAGEDIR
+import csv
+
+
+DIR = '../taylorswift/'
 
 __all__ = ['taylorswift']
 
 def taylorswift():
 	data=[]
 
-	with open(os.path.join(PACKAGEDIR,'Grades.csv'),'rt') as f:
+	with open(DIR + 'Grades.csv','rt') as f:
 		data=[row for row in csv.reader(f,delimiter=',')]
 
 	numsongs=180
@@ -43,12 +45,12 @@ def taylorswift():
 		together[i]=float(set[11])
 		i+=1
 
-	texts=np.loadtxt(os.path.join(PACKAGEDIR, 'answertext.txt'),delimiter='#',dtype='str')
+	texts=np.loadtxt(DIR + 'answertext.txt',delimiter='#', comments="##",dtype='str')
 
 	######################################################################################
 	print('''
 	    For these first four questions, if you are in a relationship, answer them with respect to your current relationship. If you are not currently in a relationship, answer them by considering either your most recent past relationship, or a potential relationship on the horizon, whichever you prefer.
-	    
+
 	    Which of these best describes your relationship?
 	    1 - Our relationship ended because of cataclysmic past offenses. OR Our relationship has some serious problems.
 	    2 - My feelings were a bit hurt when our relationship ended. OR Our relationship is going ok but has some problems.
@@ -118,7 +120,7 @@ def taylorswift():
 
 	print('''
 	    For these next two questions, think about how you feel about your life overall.
-	    
+
 	Which of these best describes how you feel about yourself?
 	1 - I have a lot of problems and they're all my fault.
 	2 - I have a lot of problems, but I don't think they're all my fault.
@@ -166,23 +168,19 @@ def taylorswift():
 	oklist=np.zeros(20)
 	index=0
 	for n in range(0,40):
-	    if any(np.abs(neterr)==n):
-	        ok=np.where(np.abs(neterr)==n)[0]
-	        for x in ok:
-	            oklist[index]=x
-	            index+=1
-	        if index>4:
-	            break
+		if any(np.abs(neterr)==n):
+			ok=np.where(np.abs(neterr)==n)[0]
+			for x in ok:
+				oklist[index]=x
+				index+=1
+			if index>4:
+				break
 
 	okintlist=[int(i) for i in oklist]
 	finalok=okintlist[0:5]
 
 	print('Here are the top five songs that match your mood:')
 	for x,item in enumerate(finalok):
-	    n=x+1
-	    print(str(n)+': '+title[item])
-	    print(texts[item])
-
-
-
-
+		n=x+1
+		print(str(n)+': '+title[item])
+		print(texts[item])
