@@ -43,7 +43,7 @@ def taylorswift():
 		together[i]=float(set[11])
 		i+=1
 
-	texts=np.loadtxt(os.path.join(PACKAGEDIR, 'answertext.txt'),delimiter='#',dtype='str')
+	texts=np.loadtxt(os.path.join(PACKAGEDIR, 'answertext.txt'),delimiter='#',comments='%',dtype='str')
 
 	######################################################################################
 	print('''
